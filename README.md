@@ -65,8 +65,8 @@
 git clone https://github.com/connectfarm1/accumulation-radar.git
 cd accumulation-radar
 
-# Python 3.8+ 即可，唯一依赖是 requests
-pip install requests
+# Python 3.8+，依赖 requests + uvicorn
+pip install requests uvicorn
 
 # 配置 Telegram 推送（可选）
 cp .env.example .env.oi
@@ -81,6 +81,16 @@ cp .env.example .env.oi
 ## 使用
 
 ```bash
+# 启动网页控制台（推荐）
+python3 web_ui.py
+# 浏览器打开 http://127.0.0.1:8765 ，点击按钮运行 pool/oi/full 并查看实时输出
+# 页面已拆分为 templates/index.html + static/style.css + static/app.js，方便独立改样式
+
+# 跨平台一键启动脚本（macOS / Linux / Windows）
+python3 start_web_ui.py
+# 或
+python start_web_ui.py
+
 # 每天跑一次：全市场535合约扫描收筹标的池
 python3 accumulation_radar.py pool
 
