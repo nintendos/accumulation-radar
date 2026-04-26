@@ -13,8 +13,20 @@
     <button onclick="runMode('pool')" id="btn-pool">运行 pool</button>
     <button onclick="runMode('oi')" id="btn-oi">运行 oi</button>
     <button onclick="runMode('full')" id="btn-full">运行 full</button>
+    <button onclick="refreshResults()" id="btn-refresh-results">刷新标的图</button>
+    <button onclick="refreshStrategies()" id="btn-strategies">刷新三策略</button>
   </div>
   <div id="status">加载中...</div>
+  <section class="panel panel-strategies">
+    <h2>三策略（追多 / 综合 / 埋伏）+ 热度</h2>
+    <div id="strategies-summary" class="subtle">点击「刷新三策略」加载（与 oi/full 同源计算，可能较慢）</div>
+    <div id="strategies-wrap" class="strategy-wrap"></div>
+  </section>
+  <section class="panel">
+    <h2>符合条件标的（迷你K线）</h2>
+    <div id="result-summary" class="subtle">加载中...</div>
+    <div id="cards" class="cards"></div>
+  </section>
   <pre id="logs"></pre>
   <div class="hint">每 2 秒自动刷新。地址：<code>http://127.0.0.1:8765</code></div>
   <script src="/static/app.js"></script>
